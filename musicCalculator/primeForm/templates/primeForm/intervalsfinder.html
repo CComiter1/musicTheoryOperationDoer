@@ -1,0 +1,27 @@
+{% extends "primeForm/base.html" %}
+
+{% block content %}
+
+<div class="row" style="text-align: center;">
+	<h1>Interval Composition Finder</h1>
+
+	<div class="col-lg-12">
+
+		<p>This is the Interval Composition Finder calculator.  Input any set of notes (seperated by a space) and click the button to find the interval composition</p>
+		<br />
+
+		<form method="POST" action="/primeform/intervalsfinder/" style="display:inline-block;">
+			<div class="form-group">
+				<!-- <label class="col-lg-2 control-label" for="notestring">Notes</label> -->
+				<input class="form-control col-lg-8" type="text" id="notestring" name="notestring" placeholder="Notes" />
+			</div>
+			<br /><br />
+			{% csrf_token %}
+			<button type="submit" class="btn btn-primary">Find Interval Composition</button>
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
+

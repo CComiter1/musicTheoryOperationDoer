@@ -1,0 +1,26 @@
+{% extends "primeForm/base.html" %}
+
+{% block content %}
+
+<div class="row" style="text-align: center;">
+	<h1>Prime Form Finder</h1>
+
+	<div class="col-lg-12">
+
+		<p>This is the Prime Form Finder calculator.  Input any set of notes (seperated by a space) and click the button to find the prime form</p>
+		<br />
+
+		<form method="POST" action="/primeform/primeformfinder/" style="display:inline-block;">
+			<div class="form-group">
+				<!-- <label class="col-lg-2 control-label" for="notestring">Notes</label> -->
+				<input class="form-control col-lg-8" type="text" id="notestring" name="notestring" placeholder="Notes" />
+			</div>
+			<br /><br />
+			{% csrf_token %}
+			<button type="submit" class="btn btn-primary">Find Prime Form</button>
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
